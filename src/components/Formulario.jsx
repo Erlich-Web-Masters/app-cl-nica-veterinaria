@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-export default function Formulario() {
+export default function Formulario({crearCita}) {
 
     const [cita, setCita] = useState({
         mascota:'',
@@ -9,6 +9,8 @@ export default function Formulario() {
         hora: '',
         sintomas: ''
     });
+
+    const [error,setError] = useState(false);
 
     const handleChange = e => {
         setCita({
@@ -21,17 +23,32 @@ export default function Formulario() {
 
     const submitCita = e => {
         e.preventDefault();
-        console.log("Enviando");
 
         //Validacion
+        if( mascota === '' || propeteario === '' || fecha === '' || hora === '' || sintomas === ''){
+            setError(true);
+            return;
+        }
+
+        setError(false);
         //Asignar un Id
+        cita.id = Math.random();
         //Crear la cita
+        crearCita(cita);
         //reiniciar el form
+        setCita({
+        mascota:'',
+        propeteario: '',
+        fecha: '',
+        hora: '',
+        sintomas: ''})
     }
 
     return (
         <>
-            <h2>Crear Sitas</h2>
+            <h2>Crear Cita</h2>
+
+            {error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null }
             <form onSubmit={ submitCita}>
             <label htmlFor="mascota">Nombre Mascota</label>
             <input 

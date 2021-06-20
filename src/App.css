@@ -16,7 +16,7 @@ h1, h2  {
 
   text-transform: uppercase;
 
-  font-family: 'Staatliches', cursive;
+  /* font-family: 'Staatliches', cursive; */
   letter-spacing: 1px;
 }
 .lista-citas .media {
@@ -89,5 +89,5 @@ input[type="time"] {
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
-  font-family:  'Staatliches', cursive;
+  /* font-family:  'Staatliches', cursive; */
 } 
