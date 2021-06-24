@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import PropTypes from 'prop-types';
 
 export default function Formulario({crearCita}) {
@@ -12,6 +12,15 @@ export default function Formulario({crearCita}) {
     });
 
     const [error,setError] = useState(false);
+
+    useEffect(() => {
+        
+        return () => {
+            setTimeout( () => {
+               setError(false)     
+            },3000)
+        }
+    }, [error])
 
     const handleChange = e => {
         setCita({
