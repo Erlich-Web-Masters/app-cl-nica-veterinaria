@@ -11,7 +11,7 @@ body {
 }
 h1, h2  {
   color: white;
-  padding: 3rem 0;
+  padding: 1.8rem 0;
   text-align: center;
 
   text-transform: uppercase;
@@ -19,6 +19,15 @@ h1, h2  {
   /* font-family: 'Staatliches', cursive; */
   letter-spacing: 1px;
 }
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+ font-size: 1.5rem;
+}
+
 .lista-citas .media {
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 3rem;
